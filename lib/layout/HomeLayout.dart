@@ -44,11 +44,13 @@ class HomeLayout extends StatelessWidget {
             key: scaffoldKey,
             appBar: AppBar(
               title: Text(cubit.titles[cubit.currentIndex]),
-              actions: [IconButton(
-                  onPressed: () {
-                    Get.to(CalculatorScreen());
-                  },
-                  icon: Icon(Icons.calculate_outlined)),],
+              actions: [
+                IconButton(
+                    onPressed: () {
+                      Get.to(CalculatorScreen());
+                    },
+                    icon: Icon(Icons.calculate_outlined)),
+              ],
             ),
             floatingActionButton: FloatingActionButton(
               backgroundColor: Color(0xff40D876),
@@ -140,7 +142,7 @@ class HomeLayout extends StatelessWidget {
                                             initialDate: DateTime.now(),
                                             firstDate: DateTime.now(),
                                             lastDate:
-                                                DateTime.parse('2021-08-19'))
+                                                DateTime.parse('2022-08-19'))
                                         .then((value) {
                                       dateController.text =
                                           DateFormat.yMMMd().format(value!);
@@ -157,6 +159,9 @@ class HomeLayout extends StatelessWidget {
                       .then((value) {
                     //Navigator.pop(context);
                     cubit.changeBottomSheet(isShow: false, icon: Icons.edit);
+                    titleController.clear();
+                    dateController.clear();
+                    timeController.clear();
                   });
                   cubit.changeBottomSheet(isShow: true, icon: Icons.add);
                 }
@@ -177,7 +182,6 @@ class HomeLayout extends StatelessWidget {
                     icon: Icon(Icons.archive_outlined), label: 'Archive'),
               ],
             ),
-
             body: Center(
               child: ConditionalBuilder(
                 condition: state is! AppGetLoadingDatabase,

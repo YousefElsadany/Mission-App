@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:hexcolor/hexcolor.dart';
 import 'package:mission_app/module/LoginPage/LoginView.dart';
 import 'package:mission_app/shared/Cubit/cubit.dart';
 import 'package:mission_app/shared/Cubit/states.dart';
@@ -27,7 +26,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => AppCubit(),
-      child: BlocConsumer<AppCubit,AppStates>(
+      child: BlocConsumer<AppCubit, AppStates>(
         listener: (context, state) {},
         builder: (context, state) {
           return GetMaterialApp(
@@ -43,6 +42,7 @@ class _MyAppState extends State<MyApp> {
 
                   backgroundColor: Colors.white,
                   elevation: 0.0,
+                  // ignore: deprecated_member_use
                   backwardsCompatibility: false,
                   titleTextStyle: TextStyle(
                       color: Colors.black,
@@ -51,22 +51,18 @@ class _MyAppState extends State<MyApp> {
                 ),
                 iconTheme: IconThemeData(
                   color: Colors.black45,
-                ) ,
+                ),
                 textTheme: TextTheme(
                   bodyText1:
-                  TextStyle(fontSize: 40.0, fontWeight: FontWeight.w600),
+                      TextStyle(fontSize: 40.0, fontWeight: FontWeight.w600),
                 ),
                 bottomNavigationBarTheme: BottomNavigationBarThemeData(
                   type: BottomNavigationBarType.fixed,
                   selectedItemColor: Color(0xff40D876),
                 )),
             darkTheme: ThemeData(
-              // fixTextFieldOutlineLabel: true,
-              //
-              // inputDecorationTheme: InputDecorationTheme(
-              //   border: OutlineInputBorder(borderSide: BorderSide(color: Colors.white) )
-              // ) ,
-                primarySwatch:Colors.green,
+                hintColor: Colors.white,
+                primarySwatch: Colors.green,
                 scaffoldBackgroundColor: Color(0xff131429),
                 appBarTheme: AppBarTheme(
                   iconTheme: IconThemeData(color: Colors.white),
@@ -84,25 +80,24 @@ class _MyAppState extends State<MyApp> {
                 ),
                 iconTheme: IconThemeData(
                   color: Colors.white,
-                ) ,
+                ),
                 textTheme: TextTheme(
                   bodyText1: TextStyle(
                       fontSize: 40.0,
                       fontWeight: FontWeight.w600,
                       color: Colors.white),
-                  bodyText2:TextStyle(
-                      color: Colors.white),
+                  bodyText2: TextStyle(color: Colors.white),
                 ),
-
                 bottomNavigationBarTheme: BottomNavigationBarThemeData(
                   type: BottomNavigationBarType.fixed,
                   selectedItemColor: Color(0xff40D876),
                   unselectedItemColor: Colors.grey,
                   backgroundColor: Color(0xff131429),
                 )),
-            themeMode: AppCubit.get(context).isDarke
-                ? ThemeMode.light
-                : ThemeMode.dark,
+            // themeMode: AppCubit.get(context).isDarke
+            //     ? ThemeMode.light
+            //     : ThemeMode.dark,
+            themeMode: ThemeMode.dark,
             debugShowCheckedModeBanner: false,
             home: LoginScreen(),
           );

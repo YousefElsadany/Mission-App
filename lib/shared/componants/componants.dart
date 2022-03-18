@@ -34,17 +34,31 @@ Widget customTextFeild({
   //Function? tap,
   suffixPress,
 }) =>
-    TextFormField(
-      controller: controller,
-      keyboardType: inputType,
-      obscureText: isPassword,
-      validator: validate,
-      onTap: tap,
-      decoration: InputDecoration(
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(25.0)),
-        labelText: title,
-        prefixIcon: Icon(pIcon),
-        suffixIcon: IconButton(icon: Icon(sIcon), onPressed: suffixPress),
+    Container(
+      // decoration: BoxDecoration(
+      //   borderRadius: BorderRadius
+      // ),
+      child: TextFormField(
+        controller: controller,
+        keyboardType: inputType,
+        obscureText: isPassword,
+        validator: validate,
+        onTap: tap,
+        decoration: new InputDecoration(
+          labelStyle: TextStyle(color: Colors.black),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(25.0)),
+          labelText: title,
+          prefixIcon: Icon(
+            pIcon,
+            // color: Colors.white,
+          ),
+          suffixIcon: IconButton(
+              icon: Icon(
+                sIcon,
+                color: Colors.white,
+              ),
+              onPressed: suffixPress),
+        ),
       ),
     );
 
@@ -57,7 +71,10 @@ Widget customTaskItem(Map model, context) => Dismissible(
             CircleAvatar(
               radius: 40.0,
               backgroundColor: Color(0xff40D876),
-              child: Text('${model['time']}',style: TextStyle(color: Colors.white,)),
+              child: Text('${model['time']}',
+                  style: TextStyle(
+                    color: Colors.white,
+                  )),
             ),
             SizedBox(
               width: 20.0,
