@@ -1,6 +1,11 @@
 # mission_app
 
-A new Flutter project.
+o Application to do BMI Calculator and add a plan of tasks to achieve your goal .
+o In this application I have used the libraries (Getx, Third Party, Bloc , intl,
+Conditional Builder), architecture pattern MVVM and I used Sqlfite as Database .
+
+![mission1](https://user-images.githubusercontent.com/55663920/159212331-ba712f31-8640-491c-b6c5-f32f207c560b.png)
+
 
 ## Getting Started
 
