@@ -1,6 +1,7 @@
 # mission_app
 
 o Application to do BMI Calculator and add a plan of tasks to achieve your goal .
+
 o In this application I have used the libraries (Getx, Third Party, Bloc , intl,
 Conditional Builder), architecture pattern MVVM and I used Sqlfite as Database .
 
