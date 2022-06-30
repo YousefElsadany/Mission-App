@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mission_app/module/CalculatorPage/result/ResultView.dart';
+import 'package:mission_app/module/calculator_page/result/ResultView.dart';
 
 class CalculatorScreen extends StatefulWidget {
   const CalculatorScreen({Key? key}) : super(key: key);

@@ -6,16 +6,16 @@ import 'package:mission_app/shared/Cubit/states.dart';
 import 'package:mission_app/shared/componants/componants.dart';
 import 'package:mission_app/shared/componants/constants.dart';
 
-class NewTasksScreen extends StatelessWidget {
-  const NewTasksScreen({Key? key}) : super(key: key);
+class ArchiveScreen extends StatelessWidget {
+  const ArchiveScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var tasks = AppCubit.get(context).archiveTasks;
     return BlocConsumer<AppCubit, AppStates>(
       listener: (context, state) {},
       builder: (context, state) {
-        var tasks = AppCubit.get(context).newTasks;
-        return /* (tasks.length == 0)
+        return  (tasks.length == 0)
             ? Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -23,14 +23,14 @@ class NewTasksScreen extends StatelessWidget {
                     Text(
                       "No Results",
                       style: TextStyle(
-                        color: Colors.grey,
+                        color: Colors.white,
                         fontSize: 18,
                       ),
                     ),
                   ],
                 ),
               )
-            : */
+            :
             ListView.separated(
                 itemBuilder: (context, index) =>
                     customTaskItem(tasks[index], context),

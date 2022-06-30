@@ -1,11 +1,12 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mission_app/module/ArchiveTasks/Artchive.dart';
 import 'package:mission_app/module/DoneTasks/done.dart';
 import 'package:mission_app/module/NewTasks/tasks.dart';
 import 'package:mission_app/shared/Cubit/states.dart';
 import 'package:sqflite/sqflite.dart';
+
+import '../../module/archive_tasks/Artchive.dart';
 
 class AppCubit extends Cubit<AppStates> {
   AppCubit() : super(AppInitalState());
@@ -66,13 +67,13 @@ class AppCubit extends Cubit<AppStates> {
     });
   }
 
-  insartToDatabase(
+   insartToDatabase(
     String title,
     String date,
     String time,
   ) async {
-    await database.transaction((txn) {
-      txn
+    await database.transaction((txn) async{
+    var tra = await txn
           .rawInsert(
         'INSERT INTO tasks(title, date, time, status) VALUES("$title", "$date", "$time", "new")',
       )
@@ -85,7 +86,7 @@ class AppCubit extends Cubit<AppStates> {
         print('Error When Inserting New Record ${error.toString()}');
       });
 
-      return null;
+      return tra;
     });
   }
 

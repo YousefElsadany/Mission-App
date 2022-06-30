@@ -15,7 +15,7 @@ class DoneScreen extends StatelessWidget {
     return BlocConsumer<AppCubit, AppStates>(
       listener: (context, state) {},
       builder: (context, state) {
-        return /* (tasks.length == 0)
+        return  (tasks.length == 0)
             ? Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -23,14 +23,14 @@ class DoneScreen extends StatelessWidget {
                     Text(
                       "No Results",
                       style: TextStyle(
-                        color: Colors.grey,
+                        color: Colors.white,
                         fontSize: 18,
                       ),
                     ),
                   ],
                 ),
               )
-            : */
+            :
             ListView.separated(
                 itemBuilder: (context, index) =>
                     customTaskItem(tasks[index], context),
