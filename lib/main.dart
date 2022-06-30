@@ -1,16 +1,15 @@
-import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:mission_app/module/LoginPage/LoginView.dart';
-import 'package:mission_app/shared/Cubit/cubit.dart';
-import 'package:mission_app/shared/Cubit/states.dart';
+import 'package:mission_app/shared/app_cubit/cubit.dart';
+import 'package:mission_app/shared/app_cubit/states.dart';
 
+import 'layout/home_layout.dart';
 import 'shared/bloc_observer.dart';
 
 void main() {
-  Bloc.observer = MyBlocObserver();
+  // Bloc.observer = MyBlocObserver();
   runApp(MyApp());
 }
 
@@ -72,7 +71,6 @@ class _MyAppState extends State<MyApp> {
                   ),
                   backgroundColor: Color(0xff131429),
                   elevation: 0.0,
-                  backwardsCompatibility: false,
                   titleTextStyle: TextStyle(
                       color: Colors.white,
                       fontSize: 20.0,
@@ -99,7 +97,7 @@ class _MyAppState extends State<MyApp> {
             //     : ThemeMode.dark,
             themeMode: ThemeMode.dark,
             debugShowCheckedModeBanner: false,
-            home: LoginScreen(),
+            home: HomeLayout(),
           );
         },
       ),

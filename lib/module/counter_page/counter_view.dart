@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mission_app/module/CounterPage/Cubit/Cubit.dart';
-import 'package:mission_app/module/CounterPage/Cubit/States.dart';
+import 'package:mission_app/module/counter_page/cubit/cubit.dart';
+import 'package:mission_app/module/counter_page/cubit/states.dart';
 
 // state less contain one class provide widget
 
@@ -18,15 +18,7 @@ class CounterScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (BuildContext context) => CounterCubit(),
-      child: BlocConsumer<CounterCubit, CounterStates>(
-        listener: (context, state) {
-          if (state is CounterplusState) {
-            //print('PLUS STATE');
-          }
-          if (state is CounterminusState) {
-            //print('MINUS STATE');
-          }
-        },
+      child: BlocBuilder<CounterCubit, CounterStates>(
         builder: (context, state) => Scaffold(
           appBar: AppBar(
             title: Text(

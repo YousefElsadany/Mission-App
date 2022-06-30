@@ -1,17 +1,12 @@
-import 'package:conditional_builder/conditional_builder.dart';
+import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:mission_app/module/ArchiveTasks/artchive.dart';
-import 'package:mission_app/module/CalculatorPage/CalculatorView.dart';
-import 'package:mission_app/module/DoneTasks/done.dart';
-import 'package:mission_app/module/NewTasks/tasks.dart';
-import 'package:mission_app/shared/Cubit/cubit.dart';
-import 'package:mission_app/shared/Cubit/states.dart';
+import 'package:mission_app/module/calculator_page/calculator_view.dart';
+import 'package:mission_app/shared/app_cubit/cubit.dart';
+import 'package:mission_app/shared/app_cubit/states.dart';
 import 'package:mission_app/shared/componants/componants.dart';
-import 'package:mission_app/shared/componants/constants.dart';
-import 'package:sqflite/sqflite.dart';
 
 // 1. create database
 // 2. create tables

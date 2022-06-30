@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mission_app/shared/Cubit/cubit.dart';
-import 'package:mission_app/shared/Cubit/states.dart';
+import 'package:mission_app/shared/app_cubit/cubit.dart';
+import 'package:mission_app/shared/app_cubit/states.dart';
 import 'package:mission_app/shared/componants/componants.dart';
 import 'package:mission_app/shared/componants/constants.dart';
 
@@ -15,7 +15,7 @@ class NewTasksScreen extends StatelessWidget {
       listener: (context, state) {},
       builder: (context, state) {
         var tasks = AppCubit.get(context).newTasks;
-        return /* (tasks.length == 0)
+        return (tasks.length == 0)
             ? Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -23,15 +23,14 @@ class NewTasksScreen extends StatelessWidget {
                     Text(
                       "No Results",
                       style: TextStyle(
-                        color: Colors.grey,
+                        color: Colors.white,
                         fontSize: 18,
                       ),
                     ),
                   ],
                 ),
               )
-            : */
-            ListView.separated(
+            : ListView.separated(
                 itemBuilder: (context, index) =>
                     customTaskItem(tasks[index], context),
                 separatorBuilder: (context, index) => Container(

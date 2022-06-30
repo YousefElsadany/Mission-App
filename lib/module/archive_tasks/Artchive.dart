@@ -1,21 +1,22 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mission_app/shared/Cubit/cubit.dart';
-import 'package:mission_app/shared/Cubit/states.dart';
+import 'package:mission_app/shared/app_cubit/cubit.dart';
+import 'package:mission_app/shared/app_cubit/states.dart';
+
 import 'package:mission_app/shared/componants/componants.dart';
 import 'package:mission_app/shared/componants/constants.dart';
 
-class DoneScreen extends StatelessWidget {
-  const DoneScreen({Key? key}) : super(key: key);
+class ArchiveScreen extends StatelessWidget {
+  const ArchiveScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var tasks = AppCubit.get(context).doneTasks;
+    var tasks = AppCubit.get(context).archiveTasks;
     return BlocConsumer<AppCubit, AppStates>(
       listener: (context, state) {},
       builder: (context, state) {
-        return /* (tasks.length == 0)
+        return (tasks.length == 0)
             ? Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -23,15 +24,14 @@ class DoneScreen extends StatelessWidget {
                     Text(
                       "No Results",
                       style: TextStyle(
-                        color: Colors.grey,
+                        color: Colors.white,
                         fontSize: 18,
                       ),
                     ),
                   ],
                 ),
               )
-            : */
-            ListView.separated(
+            : ListView.separated(
                 itemBuilder: (context, index) =>
                     customTaskItem(tasks[index], context),
                 separatorBuilder: (context, index) => Container(
