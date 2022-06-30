@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mission_app/module/CounterPage/Cubit/States.dart';
+import 'package:mission_app/module/counter_page/cubit/states.dart';
 
 class CounterCubit extends Cubit<CounterStates> {
   CounterCubit() : super(CounterInitialState());

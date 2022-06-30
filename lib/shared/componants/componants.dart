@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mission_app/shared/Cubit/cubit.dart';
+import 'package:mission_app/shared/app_cubit/cubit.dart';
 
 Widget customButtom({
   //Color buttomCollor = Color(0xff40D876),

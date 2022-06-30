@@ -1,12 +1,12 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mission_app/module/DoneTasks/done.dart';
-import 'package:mission_app/module/NewTasks/tasks.dart';
-import 'package:mission_app/shared/Cubit/states.dart';
+import 'package:mission_app/shared/app_cubit/states.dart';
 import 'package:sqflite/sqflite.dart';
 
 import '../../module/archive_tasks/Artchive.dart';
+import '../../module/done_tasks/done.dart';
+import '../../module/new_tasks/tasks.dart';
 
 class AppCubit extends Cubit<AppStates> {
   AppCubit() : super(AppInitalState());
